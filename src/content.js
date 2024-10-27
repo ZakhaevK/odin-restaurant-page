@@ -2,7 +2,7 @@ import image from "./images/club-sw.jpg";
 
 const contentDiv = document.getElementById("content");
 
-export const generateHome = function() {
+const generateHome = function() {
   const img = document.createElement("img");
   const h2 = document.createElement("h2");
   const p = document.createElement("p");
@@ -16,16 +16,15 @@ export const generateHome = function() {
   contentDiv.appendChild(p);
 }
 
-export const generateMenu = function() {
+const generateMenu = function() {
   const h2 = document.createElement("h2");
   const ul = document.createElement("ul");
 
   const li = document.createElement("li");
-  const li2= document.createElement("li");
+  const li2 = document.createElement("li");
   const li3 = document.createElement("li");
-  const liItems = {li, li2, li3};
+  const liItems = [li, li2, li3];
 
-  img.src = image;
   h2.textContent = "Menu";
   li.textContent = "Chicken Noodles";
   li2.textContent = "Beef Noodles";
@@ -33,14 +32,13 @@ export const generateMenu = function() {
 
   contentDiv.appendChild(h2);
 
-  for (element in liItems) {
+  for (const element of liItems) {
     ul.appendChild(element)
   }
   contentDiv.appendChild(ul);
 }
 
-export const generateAbout = function() {
-  const img = document.createElement("img");
+const generateAbout = function() {
   const h2 = document.createElement("h2");
   const p = document.createElement("p");
 
@@ -50,4 +48,6 @@ export const generateAbout = function() {
   contentDiv.appendChild(h2);
   contentDiv.appendChild(p);
 }
+
+export {generateHome, generateMenu, generateAbout};
 
